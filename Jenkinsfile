@@ -7,9 +7,7 @@ pipeline {
                 stash(name: 'compiled-results', includes: 'sources/*.py*') 
                 }
             }
-        }
-    }
-        stage('Deliver') {
+            stage('Deliver') {
             steps {
                 sh "pyinstaller --onefile sources/add2vals.py"
             }
@@ -19,3 +17,6 @@ pipeline {
                 }
             }
         }
+        }
+    }
+        
